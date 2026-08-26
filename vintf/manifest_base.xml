@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Base manifest for the SKU-less vendor manifest.
+
+    hardware/dolby appends its HAL fragments to DEVICE_MANIFEST_FILE,
+    which triggers assembly of a standalone /vendor/etc/vintf/manifest.xml.
+    That manifest must still carry the shipping FCM version and kernel FCM
+    level, otherwise OTA VINTF checks fail with "Kernel FCM version is not
+    specified" when PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS is true.
+    Device HALs themselves live in the SKU-specific manifests.
+-->
+<manifest version="1.0" type="device" target-level="6">
+    <kernel target-level="6"/>
+</manifest>

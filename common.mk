@@ -139,6 +139,10 @@ PRODUCT_COPY_FILES += \
     hardware/qcom-caf/sm8450/display/config/snapdragon_color_libs_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/snapdragon_color_libs_config.xml
 
 # Dolby
+# hardware/dolby appends HAL fragments to DEVICE_MANIFEST_FILE, which
+# triggers assembly of a SKU-less vendor manifest; provide the FCM levels
+# there so OTA VINTF checks can resolve the kernel FCM version.
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/vintf/manifest_base.xml
 $(call inherit-product, hardware/dolby/dolby.mk)
 
 # DRM
