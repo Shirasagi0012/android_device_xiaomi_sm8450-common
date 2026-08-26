@@ -215,7 +215,7 @@ persist.vendor.btstack.enable.twsplus=true
 persist.vendor.btstack.enable.twsplussho=true
 
 # Camera
-vendor.camera.aux.packagelist=com.snapchat.android
+# NOTE: vendor.camera.aux.packagelist is owned by miuicamera-unicorn/system.prop
 
 # SurfaceFlinger
 ro.surface_flinger.uclamp.min=205
